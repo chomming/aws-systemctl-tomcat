@@ -1,0 +1,14 @@
+[Unit]
+Description=Apache Tomcat Test
+After=network.target syslog.target
+
+[Service]
+Type=forking
+User=tomcat
+Group=tomcat
+
+ExecStart=/server/startup.sh
+ExecStop=/server/stop.sh
+
+[Install]
+WantedBy=multi-user.target
